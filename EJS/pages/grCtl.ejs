@@ -1,0 +1,58 @@
+<div class='cd1'>
+    <div class="mintitle">제어할 그룹 선택</div>
+    <select class='grSearch newNScrollBar noSelect' size='19' multiple></select>
+    <div>선택된 그룹 : <span>0</span></div>
+    <div class='Cbtn'>전체선택</div>
+    <div class='Cbtn'>전체해제</div>
+</div>
+<div class='cd2'>
+    <div class="rd1">
+        <div class="mintitle">그룹 운영 모드</div>
+        <fieldset class="batchDownLoad">
+            <div class="batchDownLoadTab">
+                <div id="optionTab1" class="batchOptionTab">
+                    <div class="Cbtn batchOption" disabled>
+                        <label>온라인 감응</label>
+                        <input type="checkbox" class='sa_mode' onclick="checkonlyone(this)">
+                    </div>
+                    <div class="Cbtn batchOption" disabled>
+                        <label>온라인 무감응</label>
+                        <input type="checkbox" class='sa_mode' onclick="checkonlyone(this)">
+                    </div>
+                </div>
+
+                <div id="optionTab2" class="batchOptionTab">
+                    <div class="Cbtn batchOption" disabled>
+                        <label>오프라인 감응</label>
+                        <input type="checkbox" class='sa_mode' onclick="checkonlyone(this)">  
+                    </div>
+                    <div class="Cbtn batchOption" disabled>
+                        <label>오프라인 무감응</label>
+                        <input type="checkbox" class='sa_mode' onclick="checkonlyone(this)">
+                    </div>
+                </div>
+            </div>
+            <div class="batchDownLoadButtonTab">
+                <div class='Cbtn' onclick="checkonlyone(this)">다운로드</div>
+            </div>
+        </fieldset>
+    </div>
+    <!-- <div class="rd3">
+        <div class="mintitle">그룹 수동 제어</div>
+        <div>
+            <div>주기번호<input type="number" min="0" name="manual" value="주기번호" disabled></div>
+            <div>현시번호<input type="number" min="0" name="manual" value="현시번호" disabled></div>
+            <div>옵셋번호<input type="number" min="0" name="manual" value="옵셋번호" disabled></div>
+            <div class="Cbtn" disabled>적용</div>
+        </div>
+    </div> -->
+    <div class="rd4">
+        <div class="mintitle">일괄 다운로드</div>
+        <div>
+            <!-- <div>주기번호<input type="number" min="0" name="manual" value="주기번호" disabled></div>
+            <div>현시번호<input type="number" min="0" name="manual" value="현시번호" disabled></div>
+            <div>옵셋번호<input type="number" min="0" name="manual" value="옵셋번호" disabled></div> -->
+            <div class="Cbtn">다운로드</div>
+        </div>
+    </div>
+</div>

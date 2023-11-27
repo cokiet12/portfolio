@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<html>
+  <head>
+    <link href='stylesheets/common.css' rel='stylesheet' />
+    <link href='stylesheets/winCommon.css' rel='stylesheet' />
+    <link href="stylesheets/main/sideBar.css" rel="stylesheet" />
+    <link href="stylesheets/main/mainButton.css" rel="stylesheet" />
+    <link href="stylesheets/main/mainMenu.css" rel="stylesheet" />
+    <link href="stylesheets/main/map.css" rel="stylesheet" />
+    <% for ( v of css ) { %>
+      <link href="stylesheets/pages/<%- v %>" rel="stylesheet" />
+    <% } %>
+    <!-- ***************************************** 다운로드 필요! ***************************************** -->
+    <link href="/libraries/font-awesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="/libraries/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script type='module' src="/libraries/bootstrap/bootstrap.min.js"></script>
+    <script>//config 설정
+      const _nodejsIP = '<%- nodejsIP %>';
+      const _ctrlSv = '<%- ctrlSv %>';
+      const isDev = '<%- isDev %>' == 'true' ? true : false;
+      let _mapsetup = JSON.parse('<%- mapsetup %>');
+      _mapsetup['centerRv'] = [_mapsetup.center[1], _mapsetup.center[0]];
+      _mapsetup['extentRv'] = [_mapsetup.extent[1], _mapsetup.extent[0], _mapsetup.extent[3], _mapsetup.extent[2]];
+      sessionStorage.setItem('token', '<%- token %>');
+      sessionStorage.setItem('user_id', '<%- user_id %>');
+      sessionStorage.setItem('user_no', '<%- user_no %>');
+      sessionStorage.setItem('user_name', '<%- user_name %>');
+      sessionStorage.setItem('authority', '<%- authority %>');
+      const SSEport = '<%- SSEport %>';
+      const user_json = '<%- user_json %>' ? JSON.parse('<%- user_json %>') : {"rightDropDown":[1,0,1,1,1],"rightDropUp":[1,0,0,0,1,0,0,1,1,1,1],"curlcno":undefined,"mapinfo":`[]`}
+      let mapinfo = user_json && user_json.mapinfo ? JSON.parse(user_json.mapinfo) : new Array();
+    </script>
+    <script src="/libraries/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/libraries/jquery/jquery-ui.min.js"></script>
+    <script src="/libraries/jquery/jquery-multi-select.js"></script>
+
+    <link href="/libraries/msfmultiselect/msfmultiselect.css" rel="stylesheet" />
+    <script src="/libraries/msfmultiselect/msfmultiselect.js"></script>
+
+    <script src="/libraries/geolib/index.min.js"></script>  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/geolib@3.3.1/lib/index.min.js"></script> -->
+    <script src="/libraries/konva/konva.min.js"></script>
+    
+    <!-- ***************************************** TMAP ***************************************** -->
+    <!-- <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=l7xx0872d0a79b734b07846541972ecdff13"></script>   -->
+
+    <!-- ***************************************** GIS ***************************************** -->
+    <link href="stylesheets/main/ol.css" rel="stylesheet" />
+    <script src='javascripts/main/MapSetup.js'></script>
+    <script src='javascripts/main/ol.js'></script>
+    <script src='javascripts/main/NeoMap.js'></script>
+    
+    <!-- ***************************************** 모듈 ***************************************** -->
+    <script type='module' src="/modules/handsontable/dist/handsontable.full.min.js" async></script>
+    <script type='module' src="/libraries/UI-Dropdown-master/dropdown.min.js" async></script>  
+    
+    <script type='module' src="/modules/korean-regexp/dist/index.es.js" async></script>
+    <script type='module' src="/modules/@simonwep/pickr/dist/pickr.es5.min.js" async></script>
+    <script src="/modules/d3/dist/d3.min.js"></script>
+    <script src="/modules/exceljs/dist/exceljs.min.js"></script>
+    <!-- <script type='module' src="/modules/file-saver/dist/FileSaver.min.js"></script> -->
+
+    <script src='javascripts/class.js'></script>
+    <script src='javascripts/common.js'></script>
+    
+    <script	src="javascripts/main/mainButton.js"></script>
+    <script	src="javascripts/main/mainMenu.js"></script>
+    <!-- <script	src="javascripts/main/tmap.js"></script> -->
+    <script	src="javascripts/main/sideBar.js"></script>
+    <script	src="javascripts/main/map.js"></script>
+
+    <script src='javascripts/pages/dbCopy.js'></script>
+    <script src='javascripts/pages/userConfig.js'></script>
+    <script src='javascripts/pages/system.js'></script>
+    <script src='javascripts/pages/saConfig.js'></script>
+    <script src='javascripts/pages/lcConfig.js'></script>
+    <script src='javascripts/pages/lcDetailConfig.js'></script>
+    <script src='javascripts/pages/flowConfig.js'></script>
+    <script src='javascripts/pages/eventMonitor.js'></script>
+    <script src='javascripts/pages/videoMonitor.js'></script>
+    <script src='javascripts/pages/tod.js'></script>
+    <!-- <script src='javascripts/pages/lookLogs.js'></script> -->
+    
+    <script	src="javascripts/pages/dbUpDown/startUp.js"></script>
+    <script	src="javascripts/pages/dbUpDown/signalMap.js"></script>
+    <script	src="javascripts/pages/dbUpDown/flashMap.js"></script>
+    <script	src="javascripts/pages/dbUpDown/detectorConfig.js"></script>
+    <script	src="javascripts/pages/dbUpDown/operationPlan.js"></script>
+    <script	src="javascripts/pages/dbUpDown/outPed.js"></script>
+    <script	src="javascripts/pages/dbUpDown/conflictMap.js"></script>
+    <script	src="javascripts/pages/dbUpDown/systemConfig.js"></script>
+    <script	src="javascripts/pages/dbUpDown/ups.js"></script>
+    <script	src="javascripts/pages/dbUpDown/specialCommand.js"></script>
+
+    <script	src="javascripts/pages/signalEdit/todEdit.js"></script>
+    <script	src="javascripts/pages/signalEdit/splitEdit.js"></script>
+    <script	src="javascripts/pages/signalEdit/algorithm.js"></script>
+    <script	src="javascripts/pages/signalEdit/firmware.js"></script>
+
+    <script	src="javascripts/testing.js" defer></script>
+    <script	src="javascripts/nodeLink.js" defer></script>
+    <script	src="javascripts/modalInit.js" defer></script>
+    <script src="javascripts/main/intervals.js" defer></script>
+    <script	src="javascripts/main/main.js" defer></script>
+    <script	src="javascripts/main/sse.js" defer></script>
+    <script src="javascripts/main/intervalPhase.js" defer></script>
+    <script src="javascripts/bookmark.js" defer></script>
+  </head>
+  <!-- <body onload="initTmap(); initTmap(2); initLoadingPage()"> -->
+  <!-- <body onload="initLoadingPage()"> -->
+  <body>
+    <svg id="rightClick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-282 373 35.8 35.8" xml:space="preserve">
+      <path fill="#E0E0E0" d="M-262.6,375.5h-0.4v3.5c-0.4-0.1-0.8-0.2-1.1-0.2h0c-0.4,0-0.8,0-1.1,0.2v-3.5h-0.4c-3.9,0-7,3.1-7,7v3.3h4.8  v2.4h-4.8v9.3c0,2.3,0.9,4.5,2.5,6.2c1.6,1.7,3.8,2.6,6,2.6h0.1c4.6-0.1,8.4-3.9,8.4-8.6v-9.5h-4.8v-2.4h4.8v-3.3  C-255.6,378.7-258.7,375.5-262.6,375.5z M-261.8,389.3c0,1.3-1,2.4-2.4,2.4c-1.3,0-2.4-1-2.4-2.4v-6.7c0-1.3,1-2.4,2.4-2.4h0  c1.3,0,2.4,1,2.4,2.4L-261.8,389.3L-261.8,389.3z"/>
+      <path fill="#D65A62" class="red" d="M-264.2,374.5v12.3h9.6v-5.2C-254.6,381.7-254.9,374.5-264.2,374.5z"/>
+      <path fill="#353035" d="M-264.1,380.2L-264.1,380.2c-1.3,0-2.4,1-2.4,2.4v6.8c0,1.3,1,2.4,2.4,2.4h0c1.3,0,2.4-1,2.4-2.4v-6.8  C-261.8,381.2-262.8,380.2-264.1,380.2z"/>
+      <path fill="#010101" d="M-262.6,373.2h-3.1c-5.1,0-9.3,4.2-9.3,9.3v14.9c0,2.9,1.1,5.7,3.2,7.8c2.1,2.1,4.8,3.3,7.7,3.3h0.2  c5.9-0.1,10.7-5,10.7-10.9v-15.2C-253.3,377.4-257.5,373.2-262.6,373.2z M-255.6,385.8h-4.8v2.4h4.8v9.5c0,4.6-3.8,8.5-8.4,8.6h-0.1  c-2.3,0-4.4-0.9-6-2.6c-1.6-1.7-2.5-3.9-2.5-6.2v-9.3h4.8v-2.4h-4.8v-3.3c0-3.9,3.1-7,7-7h0.4v3.5c0.4-0.1,0.8-0.2,1.1-0.2h0  c0.4,0,0.8,0,1.1,0.2v-3.5h0.4c3.9,0,7,3.1,7,7L-255.6,385.8L-255.6,385.8z"/>
+    </svg>
+    <!-- <div id="loaderdiv">
+      <div id="loader"></div>
+      <p>로딩중...</p>
+    </div> -->
+    <div id='modals'>
+      <div class="filter"></div>
+    </div>
+    <% include ./main/leftSideBar %>
+    <% include ./main/rightSideBar %>
+    <% include ./main/map %>
+
+    <div id="markerHtmlDiv"></div>
+    <div id="subMarkerHtmlDiv">
+      <% switch(authority){
+        case 1 : %>
+        <div class='subMarker mapSubMarker'>
+          <div onclick='makeMonitoring()'>교차로</br>모니터링</div> <!--1-->
+          <div onclick='eMonitorLoad()'>이벤트</br>조회</div> <!--4-->
+          <div onclick='gMonitoringLoad()'>그룹</br>모니터링</div> <!--2-->
+          <div onclick='lookLogsLoad()'>운영이력</br>조회</div> <!--3-->
+          <div style="background-color: var(--mc7); color: var(--mfc7);">교차로</br>편집</div> <!--6-->
+          <div style="background-color: var(--mc7); color: var(--mfc7);">DB</br>업다운로드</div> <!--5-->
+        </div>
+       <% break;
+        case 2 : %>
+        <div class='subMarker mapSubMarker'>
+          <div onclick='makeMonitoring()'>교차로</br>모니터링</div> <!--1-->
+          <div onclick='eMonitorLoad()'>이벤트</br>조회</div> <!--4-->
+          <div onclick='gMonitoringLoad()'>그룹</br>모니터링</div> <!--2-->
+          <div onclick='lookLogsLoad()'>운영이력</br>조회</div> <!--3-->
+          <div onclick='lcConfigLoad()'>교차로</br>편집</div> <!--6-->
+          <div style="background-color: var(--mc7); color: var(--mfc7);">DB</br>업다운로드</div> <!--5-->
+        </div>
+       <% break;
+        case 3 : %>
+        <div class='subMarker mapSubMarker'>
+          <div onclick='makeMonitoring()'>교차로</br>모니터링</div> <!--1-->
+          <div onclick='eMonitorLoad()'>이벤트</br>조회</div> <!--4-->
+          <div onclick='gMonitoringLoad()'>그룹</br>모니터링</div> <!--2-->
+          <div onclick='lookLogsLoad()'>운영이력</br>조회</div> <!--3-->
+          <div onclick='lcConfigLoad()'>교차로</br>편집</div> <!--6-->
+          <div onclick='dbUpDownEdit()'>DB</br>업다운로드</div> <!--5-->
+        </div>
+       <% default : break;
+       } %>
+    </div>
+    <div id="markerMiniMapDiv"></div>
+    <div id="phaseDiv"></div>
+  </body>
+</html>

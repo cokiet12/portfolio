@@ -1,0 +1,181 @@
+<div id="leftSideBar" class="leftSideBar leftMinify" onmouseover="leftSideBarButton()" onmousemove="leftSideBarButton()" onmouseout="leftSideBarButton()">
+  <a id="left" onclick="leftSideBar(event); leftSideBarButton()">
+    <i class="zmdi zmdi-caret-right zmdi-hc-2x" aria-hidden="true" title="여닫기(Q)"></i>
+  </a>
+  <div class="sm">
+    <div class='curTime'></div>
+    <div class='curTime'></div>
+  </div>
+  
+  <div>
+    <h4>정상운영 [<span></span>]</h4>
+    <p>전체운영교차로 [<span></span>]</p>
+    <div><span>정상운영</span><span>x</span></div>
+    <div class="minTitle"><span>루프검지</span></div>
+    <div><span>통신이상</span><span>x</span></div>
+    <div><span>정상운영</span><span>x</span></div>
+    <div><span>소등</span><span>x</span></div>
+    <div><span>검지기 에러</span><span>x</span></div>
+    <div><span>고장점멸</span><span>x</span></div>
+    <div class="minTitle"><span>보행감응</span></div>
+    <div><span>모순감지</span><span>x</span></div>
+    <div><span>정상운영</span><span>x</span></div>
+    <div><span>문 열림</span><span>x</span></div>
+    <div><span>단선/고장</span><span>x</span></div>
+  </div>
+  
+  <div id="d3chart">
+    <div class="Cbtn" style="visibility:hidden">LC 형태 편집 <i class="zmdi zmdi-chevron-right zmdi-hc-lg"></i></div>
+  </div>
+
+  <div>
+
+    <div><span>SCU 고정주기</span><span>x</span></div>
+    <div><span>현시유지</span><span>x</span></div>
+    <div><span>오프라인</span><span>x</span></div>
+    <div><span>로컬-감응</span><span>x</span></div>
+    <div><span>온라인</span><span>x</span></div>
+    <div><span>센터-감응</span><span>x</span></div>
+    <div><span>점멸</span><span>x</span></div>
+    <div><span>수동운영</span><span>x</span></div >
+    <!-- <div><span></span><span></span></div> -->
+    
+  </div>
+  
+  <div class="sm">
+    <p></p>
+    <a href="/logout" onclick="logout()">로그아웃</a>
+    <img src="images/main/mainlogo.png" height="50%"
+      class="whiteBack"
+    />
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;<%- projectName.split("/")[0] %></h1><h2><%- projectName.split("/")[1] %></h2>
+    <!-- ../../templates/front/assets/images/img_logo.png -->
+  </div>
+</div>
+<div class="leftDropDown">
+  <div>현재 선택 교차로 : <span></span></div>
+  <div>교차로 검색 : </div>
+  <div id="leftDropDown"></div>
+</div>
+<!-- <div class="leftDropUp">
+  <button onclick="leftDropUp()" class="dropUpButton">DropUp</button>
+  <div id="leftDropUp" class="leftDropUpContent">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div> -->
+<div class="lcshapeWrap">
+  <div>
+    <div>LC모양</div>
+    <div>LC상태별 색상</div>
+    <div><i class="zmdi zmdi-close zmdi-hc-lg"></i></div>
+  </div>
+  <div class="lcshape">
+    <div>
+      <div>그룹</div>
+      <div>MI</div>
+      <div>CI</div>
+      <div>SCI</div>
+      <div>RAMP</div>
+    </div>
+    <div>
+      <div>비선택 색상</div>
+      <div>선택 색상</div>
+      <div>투명도</div>
+      <div>크기</div>
+      <div><select onchange="setLCShape('MI')">
+        <option value="circle">원</option>
+        <option value="square">사각</option>
+        <option value="pentagon">오각</option>
+        <option value="hexagon">육각</option>
+        <option value="octagon">팔각</option>
+        <option value="diamond">다이아</option>
+        <option value="star">별</option>
+      </select></div>
+      <div><select onchange="setLCShape('CI')">
+        <option value="circle">원</option>
+        <option value="square">사각</option>
+        <option value="pentagon">오각</option>
+        <option value="hexagon">육각</option>
+        <option value="octagon">팔각</option>
+        <option value="diamond">다이아</option>
+        <option value="star">별</option>
+      </select></div>
+      <div><select onchange="setLCShape('SCI')">
+        <option value="circle">원</option>
+        <option value="square">사각</option>
+        <option value="pentagon">오각</option>
+        <option value="hexagon">육각</option>
+        <option value="octagon">팔각</option>
+        <option value="diamond">다이아</option>
+        <option value="star">별</option>
+      </select></div>
+      <div><select onchange="setLCShape('RAMP')">
+        <option value="circle">원</option>
+        <option value="square">사각</option>
+        <option value="pentagon">오각</option>
+        <option value="hexagon">육각</option>
+        <option value="octagon">팔각</option>
+        <option value="diamond">다이아</option>
+        <option value="star">별</option>
+      </select></div>
+    </div>
+    <div>
+      <div class="color-picker"></div>
+      <div class="color-picker"></div>
+      <div><input type='range' min='15' max='90' value="70" onchange="maps.forEach((v,i)=>{changeLinks(neoMap, v, undefined, Number(this.value))})"></div>
+      <div><input type='range' min='1' max='70' value="15" onchange="maps.forEach((v,i)=>{changeLinks(neoMap, v, {width:Number(this.value)})})" class="linksize"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+    </div>
+  </div>
+  <div class="lcshape2">
+    <div>
+      <div>SCU 고정주기</div>
+      <div class="color-picker"></div>
+      <div>현시유지</div>
+      <div class="color-picker"></div>
+    </div>
+    <div>
+      <!-- 로컬-무감응 -->
+      <div>오프라인제어</div>
+      <div class="color-picker"></div>
+      <div>로컬-감응</div>
+      <div class="color-picker"></div>
+    </div>
+    <div>
+      <!-- 센터-무감응 -->
+      <div>온라인제어</div>
+      <div class="color-picker"></div>
+      <div>센터-감응</div>
+      <div class="color-picker"></div>
+    </div>
+    <div>
+      <div>점멸</div>
+      <div class="color-picker"></div>
+      <div>전이중</div>
+      <div class="color-picker"></div>
+    </div>
+    <div>
+      <div>수동운영</div>
+      <div class="color-picker"></div>
+      <div>통신이상</div>
+      <div class="color-picker"></div>
+    </div>
+    <div>
+      <div>소등</div>
+      <div class="color-picker"></div>
+      <div>모순</div>
+      <div class="color-picker"></div>
+    </div>
+    <div>
+      <div>문열림</div>
+      <div class="color-picker"></div>
+      <div>기타</div>
+      <div class="color-picker"></div>
+    </div>
+  </div>
+</div>

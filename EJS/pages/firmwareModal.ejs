@@ -1,0 +1,45 @@
+<div id="A">
+    <label>
+        종류<br/>
+        <select>
+            <option value="-1">전체</option>
+            <option value="1">MCU</option>
+            <option value="2">SCU</option>
+        </select>
+    </label>
+    <label>
+        제조사코드<br/>
+        <input type="text" class="search" spellcheck="false">
+    </label>
+    <label>
+        모듈번호<br/>
+        <input type="text" class="search" spellcheck="false">
+    </label>
+    <div id="firmwareSearchButton" style="float: right;">
+        <div class="Cbtn">검색</div>
+    </div>
+</div>
+
+<!-- <div id="firmwareManufactureSearch" class="firmwareSearch">
+    <input type="text" class="search" placeholder="제조사코드" spellcheck="false">
+</div>
+<div id="firmwareModuleSearch" class="firmwareSearch">
+    <input type="text" class="search" placeholder="모듈번호" spellcheck="false">
+</div> -->
+<!-- <div id="firmwareSearchButton" style="float: right;">
+    <button class="Cbtn">검색</button>
+</div> -->
+<div id="firmwareTab">
+    <fieldset class="firmware">
+        <legend>펌웨어 정보</legend>
+        <div class="firmwareTable"></div>
+        <div class="btn" style="width: 100%;">
+            <div style="float:left" class="Cbtn">조회</div>
+            <div style="float:left" class="Cbtn">추가</div>
+            <div style="float:left" class="Cbtn">삭제</div>
+            <!-- <div style="float:left" class="Cbtn">초기화</div> -->
+            <div style="float:left" class="Cbtn">범례</div>
+            <div style="float:right" class="Cbtn">DB저장</div>
+        </div>
+    </fieldset>
+</div>

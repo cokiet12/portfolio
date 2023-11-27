@@ -1,0 +1,113 @@
+
+<div class="tabs">
+    <div class="actv">실시간 이벤트</div>
+    <div>이벤트 조회</div>
+    <label class="onBtn">
+        실시간 로그<input type="checkbox" checked>
+        <div>On</div>
+    </label>
+    <div class="settings">
+        <i class="zmdi zmdi-print zmdi-hc-lg"></i>
+        <div style="display:none;">
+            <div>엑셀 저장</div>
+            <div>PDF 저장/인쇄</div>
+            <div>데이터 복사</div>
+        </div>
+    </div>
+</div>
+<div class="on">
+    <div class="conditions">
+        <div></div>
+        <!-- <fieldset>
+            <legend>그룹/교차로</legend>
+            <div>
+                <label>
+                    이벤트 :<select>
+                        <option value="null">전체</option>
+                        <option value="2">교차로</option>
+                        <option value="1">그룹</option>
+                    </select>
+                </label>
+                <label>
+                    대상 :<select></select>
+                </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>이벤트 필터링</legend>
+            <div>
+                <label>
+                    통신이상<input type="checkbox">
+                </label>
+                <label>
+                    모순발생<input type="checkbox">
+                </label>
+                <label>
+                    DB에러<input type="checkbox">
+                </label>
+                <label>
+                    전원이상<input type="checkbox">
+                </label>
+            </div>
+        </fieldset> -->
+    </div>
+    <div class="tab">
+        <div class="tabhd">
+            <div class="live_no" title="no">no</div>
+            <div class="live_time" title="발생시각">발생시각</div>
+            <div class="live_type" title="이벤트 종류">이벤트 종류</div>
+            <div class="live_id" title="ID">대상 ID</div>
+            <div class="live_name" title="이름">대상 이름</div>
+            <div class="live_event" title="발생이벤트">발생이벤트</div>
+            <div class="live_event_detail" title="이벤트 상세">이벤트 상세</div>
+            <div class="live_explain" title="이벤트설명">이벤트 설명</div>
+        </div> 
+        <div class="newNScrollBar"></div>
+    </div>
+</div>
+
+
+<div class="log">
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local" step="2">
+            ~<input type="datetime-local">
+        </label>
+        <label>
+            이벤트타입<br/>
+            <select>
+                <option value="-1">전체</option>
+                <option value="1">교차로 이벤트</option>
+                <option value="2">그룹 이벤트</option>
+                <option value="3">검지기 이벤트</option>
+                <option value="4">운영자 이벤트</option>
+            </select>
+        </label>
+        <label>
+            대상<br/>
+            <select>
+
+            </select>
+        </label>
+        <label>
+            이벤트분류<br/>
+            <select>
+
+            </select>
+        </label>
+        <label>
+            운영자<br/>
+            <select>
+
+            </select>
+        </label>
+        <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <div class="tab">
+        
+    </div>
+</div>
+<!-- <div class="btns">
+    <div class="Cbtn">파일 저장</div>
+</div> -->

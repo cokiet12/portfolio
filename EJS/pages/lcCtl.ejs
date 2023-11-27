@@ -1,0 +1,81 @@
+<div class='cd1'>
+    <div class="mintitle">제어할 교차로 선택</div>
+    <select class='grSearch newNScrollBar noSelect' size='19' multiple></select>
+    <div>선택된 교차로 : <span>0</span></div>
+    <div class='Cbtn'>전체선택</div>
+    <div class='Cbtn'>전체해제</div>
+</div>
+<div class='cd2'>
+    <div class="rd1">
+        <div class="mintitle">교차로 제어</div>
+        <div class="not">
+            <div>
+                <div></div>
+                <div>소등<input type="checkbox" name="lcopmode" value=""></div>
+                <div>점멸<input type="checkbox" name="lcopmode" value=""></div>
+                <div></div>
+            </div>
+            <div>
+                <div>조광제어<input type="checkbox" name="lcopmode" value=""></div>
+                <div>수동허용<input type="checkbox" name="lcopmode" value=""></div>
+                <div>모순사용<input type="checkbox" name="lcopmode" value=""></div>
+                <div>모순해제<input type="checkbox" name="lcopmode" value=""></div>
+            </div>
+            <div>
+                <div>SCU리셋<input type="checkbox" name="lcopmode" value=""></div>
+                <div>MCU리셋<input type="checkbox" name="lcopmode" value=""></div>
+                <div>감응제어<input type="checkbox" name="lcopmode" value=""></div>
+                <div>보행자버튼<input type="checkbox" name="lcopmode" value=""></div>
+            </div>
+        </div>
+        <div>
+            <div class="mimintit">현시 생략 및 유지</div>
+            <div class="rrd1">
+                <div>현시생략<input type="radio" name="ingnore" value="ignore"></div>
+                <div>현시유지<input type="radio" name="ingnore" value="mt"></div>
+                <div>해당 현시 번호 : <select><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+            </div>
+        </div>
+        <div>
+            <div class="mimintit">앞막힘 관련</div>
+            <div class="rrd2">
+                <div>앞막힘 제어<input type="checkbox" name="spillback" value="spillback"></div>
+                <div>앞막힘 방향 : <select><option value="1">북</option><option value="2">동</option><option value="3">남</option><option value="4">서</option><option value="5">북동</option><option value="6">남동</option><option value="7">남서</option><option value="8">북서</option></select></div>
+                <div>앞막힘 적용 주현시 : <select><option value="1">A1</option><option value="2">A2</option><option value="3">A3</option><option value="4">A4</option><option value="5">A5</option><option value="6">A6</option><option value="7">A7</option><option value="9">B1</option><option value="10">B2</option><option value="11">B3</option><option value="12">B4</option><option value="13">B5</option><option value="14">B6</option><option value="15">B7</option></select></div>
+                <div>앞막힘 적용 부현시 : <select><option value="1">A1</option><option value="2">A2</option><option value="3">A3</option><option value="4">A4</option><option value="5">A5</option><option value="6">A6</option><option value="7">A7</option><option value="9">B1</option><option value="10">B2</option><option value="11">B3</option><option value="12">B4</option><option value="13">B5</option><option value="14">B6</option><option value="15">B7</option></select></div>
+            </div>
+        </div>
+        <div>
+            <div class="mimintit">PPC 제어, 시차제</div>
+            <div class="rrd3">
+                <div>ppc 제어<input type="checkbox" name="ingnore" value="ignore"></div>
+                <div>시차제 적용<input type="checkbox" name="ingnore" value="mt"></div>
+                <div>시차제 플랜 번호 : <select><option value="0">일반제</option><option value="6">시차제1</option><option value="7">시차제2</option><option value="8">시차제3</option><option value="9">시차제4</option><option value="10">시차제5</option></select></div>
+            </div>
+        </div>
+    </div>
+    <div class="rd2">
+        <div></div>
+        <div>
+            <label>수행명령<input type="radio" name="dostop" value="1"></label>
+            <label>수행종료<input type="radio" name="dostop" value="0"></label>
+            <div class="Cbtn">다운로드</div>
+        </div>
+    </div>
+    <!-- <div class="rd3">
+        <div class="mintitle">교차로 운영 모드</div>
+        <div>
+            <div>센터모드<input type="radio" name="opmode" value="center"></div>
+            <div>로컬모드<input type="radio" name="opmode" value="local"></div>
+            <div class="Cbtn">적용</div>
+        </div>
+    </div>
+    <div class="rd4">
+        <div class="mintitle">교차로 TOD/TRC 설정</div>
+        <div>
+            <div>TOD<input type="radio" name="topmode" value="TOD"></div>
+            <div>TRC<input type="radio" name="topmode" value="TRC"></div>
+            <div class="Cbtn">적용</div>
+        </div>
+    </div> -->
+</div>

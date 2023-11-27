@@ -1,0 +1,68 @@
+<div class="videoWarp">
+    <div class="videoTitle">
+    </div>
+    <div class="videoTab">
+        <img src="images/main/video.gif" style="width: 435px; height: 251px;"/>
+    </div>
+</div>
+
+<style>
+    .videoWarp {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-row-gap: 10px;
+    }
+
+    .videoTitle {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 10px;
+    }
+
+        .videoTitle p {
+            margin: 0;
+        } 
+
+        .videoTitle > div {
+            background-color: #000;
+            color: #FFF;
+
+            display: grid;
+            grid-template-columns: auto 15px;
+            justify-content: space-around;
+            align-items: center;
+        } 
+
+            .videoTitle > div .circle {
+                border-radius: 50%;
+                background: #0f9a38;
+                height: 15px;
+            }
+
+                .videoTitle > div .circle.blink {
+                    -webkit-animation:blink 1s ease-in-out infinite alternate;
+                    -moz-animation:blink 1s ease-in-out infinite alternate;
+                    animation:blink 1s ease-in-out infinite alternate;
+                }
+
+                @-webkit-keyframes blink{
+                    0% {opacity:0;}
+                    100% {opacity:1;}
+                }
+
+                @-moz-keyframes blink{
+                    0% {opacity:0;}
+                    100% {opacity:1;}
+                }
+
+                @keyframes blink{
+                    0% {opacity:0;}
+                    100% {opacity:1;}
+                }
+
+    .videoTab {
+        border: 1px solid #fff;
+    }
+</style>

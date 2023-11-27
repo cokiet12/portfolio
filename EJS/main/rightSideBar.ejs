@@ -1,0 +1,62 @@
+<div id="rightSideBar" class="rightSideBar rightMinify" onmouseover="rightSideBarButton()" onmousemove="rightSideBarButton()" onmouseout="rightSideBarButton()">
+  <!-- <a id="right" onclick="rightSideBar(this); rightSideBarButton()">
+    <i class="zmdi zmdi-menu zmdi-hc-2x"></i>
+  </a> -->
+  <%- include('mainMenu') %>
+</div>
+<div class="rightDropDown">
+  <button onclick="rightDropDown()" class="dropDownButton">스마트교통신호운영</button>
+  <div id="rightDropDown" class="rightDropDownContent">
+    <label>교통신호정보(교차로)<input type="checkbox" onChange="isLcInfo(event)" checked></label>
+    <!-- <label>트래픽 정보<input type="checkbox" onChange="runTraffic(event)"></label> -->
+    <label>제어운영모드별<input type="checkbox" onChange="connErr.markerColoring(event)" checked></label>
+    <label>에러발생별<input type="checkbox" onChange="connErr.markerColoring(event)" checked></label>
+    <label>현시이동류<input type="checkbox" onChange="isPhaseInfo(event)" checked></label>
+    <label>그룹 구분<input type="checkbox" checked disabled></label>
+  </div>
+</div>
+<div class="rightDropUp">
+  <div onclick="rightDropUp()" class="dropUpButton">지도기능선택</div>
+  <div id="rightDropUp" class="rightDropUpContent">
+    <div class="content">
+      <div class="minTitle">테마</div>
+      <div>
+        <!-- <label>노멀<input onchange="themeNrml()" type="radio" name="theme"/></label> -->
+        <label>다크<input onchange="themeDark()" type="radio" name="theme"/></label>
+        <!-- <label>아이보리와인 테마<input onchange="jc()" type="radio" name="theme"/></label> -->
+        <label>그린 테마<input onchange="jgGreenEd()" type="radio" name="theme"/></label>
+        <!-- <label>네온 테마<input onchange="jgblueEd()" type="radio" name="theme"/></label> -->
+        <!-- <label> 테마<input onchange="jgUisungEd()" type="radio" name="theme"/></label> -->
+        <label>유리 테마<input onchange="sjGlassEd()" type="radio" name="theme"/></label>
+        <!-- <label>네오트래픽 테마<input onchange="chNeoTrafficEd()" type="radio" name="theme"/></label> -->
+        <label>크리스마스 테마<input onchange="swXmasEd()" type="radio" name="theme"/></label>
+      </div>
+    </div>
+    <!-- <div class="content">
+      <div class="minTitle">지도유형(지도1)</div>
+      <div>
+        <label>일반<input type="radio" name='satelite' onchange="mapType()"></input></label>
+        <label>위성<input type="radio" name='satelite' onchange="mapType()"></input></label>
+        <label>혼합<input type="radio" name='satelite' onchange="mapType()"></input></label>
+      </div>
+    </div> -->
+    <div class="content">
+      <div class="minTitle">지도분할</div>
+      <div>
+        <label>무분할 맵<input type="radio" name="divide" onchange="divideMap('nrml')"></input></label>
+        <label>3분할 맵<input type="radio" name="divide" onchange="divideMap('3div')"></input></label>
+        <label>4분할 맵<input type="radio" name="divide" onchange="divideMap('4div')"></input></label>
+      </div>
+    </div>
+    <div class="content">
+      <div class="minTitle">마커기능표출</div>
+      <div>
+        <label>교차로<input type="checkbox" onchange="isShowLC()" checked></input></label>
+        <label>루프/영상검지기<input type="checkbox" onchange="isShowDET()" checked></input></label>
+        <label>스마트영상검지기<input type="checkbox" onchange="isShowCAM()" checked></input></label>
+        <label>압버튼<input type="checkbox" onchange="isShowPUSH()" checked></input></label>
+      </div>
+    </div>
+  </div>
+</div>
+

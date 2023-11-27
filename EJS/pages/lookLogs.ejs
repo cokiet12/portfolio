@@ -1,0 +1,253 @@
+
+<div class="tabs">
+    <div class="actv">교차로 신호이력</div>
+    <div>그룹 신호이력</div>
+    <div style="display : none;">그룹 결합분리</div>
+    <div>교차로 교통정보</div>
+    <div>교차로 교통통계</div>
+    <div>검지기 현황</div>
+    <div>검지기 이력</div>
+    <div>검지기 통계</div>
+    <div style="display : none;">감응 신호이력</div>
+    <div class="settings">
+        <i class="zmdi zmdi-print zmdi-hc-lg"></i>
+        <div style="display:none;">
+            <div>엑셀 저장</div>
+            <div>PDF 저장/인쇄</div>
+            <div>데이터 복사</div>
+        </div>
+    </div>
+</div>
+<div class="tab0">
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local">
+            ~<input type="datetime-local">
+        </label>
+        <label>
+            교차로<br/>
+            <select>
+            </select>
+        </label>
+        <div></div>
+        <div></div>
+        <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <div class="tab">
+
+    </div>
+</div>
+
+
+<div class="tab1">
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local">
+            ~<input type="datetime-local">
+        </label>
+        <label>
+            그룹<br/>
+            <select>
+
+            </select>
+        </label>
+        <div></div>
+        <div></div>
+        <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <div class="tab" style="height:545px;">
+
+    </div>
+</div>
+
+<div class="tab2">
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local">
+            ~<input type="datetime-local">
+        </label>
+        <label>
+            그룹<br/>
+            <select>
+
+            </select>
+        </label>
+        <div></div>
+        <div></div>
+        <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <div class="tab">
+
+    </div>
+</div>
+
+<div class="tab3">
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local">
+            ~<input type="datetime-local">
+        </label>
+        <label>
+            교차로<br/>
+            <select>
+
+            </select>
+        </label>
+        <div></div>
+        <div></div>
+        <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <div class="tab">
+
+    </div>
+</div>
+
+<div class="tab4">
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local">
+            ~<input type="datetime-local">
+        </label>
+        <label>
+            교차로<br/>
+            <select>
+
+            </select>
+        </label>
+        <label>
+            통계유형<br/>
+            <select>
+                <option value="1">15분</option>
+                <option value="2">1시간</option>
+                <option value="3">1일</option>
+                <option value="4">한 달</option>
+            </select>
+        </label>
+        <div></div>
+        <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <div class="tab">
+
+    </div>
+</div>
+
+<div class="tab5">
+    <div class="searchTab">
+        <div class="conditions">
+            <div class="lc_name">교차로</div>
+            <select id="se" style="width: 50%;"></select>
+            <label></label>
+        </div>
+        <div class="conditions2">
+            <div class="lc_name">검지기 용도</div>
+            <div class="check_div">
+                <input id="use1" type="checkbox">직진
+                <input id="use2" type="checkbox">좌회전
+                <input id="use3" type="checkbox">대기행렬
+                <input id="use4" type="checkbox">앞막힘
+                <input id="use5" type="checkbox">좌회전대기
+                <input id="use6" type="checkbox">기타
+                <input id="use7" type="checkbox">쌍루프(상류)
+                <input id="use8" type="checkbox">쌍루프(하류)
+            </div>
+        </div>
+        <div class="btn_Div">
+            <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+        </div>
+        <div class="conditions2">
+            <div class="lc_name2">검지기 상태</div>
+            <div>
+                <div class="check_div_1">
+                    <input id="type1" type="checkbox">실장여부
+                    <input id="type2" type="checkbox">루프단선
+                    <input id="type3" type="checkbox">ANALOG부 고장
+                    <input id="type4" type="checkbox">DIGITAL부 고장
+                    <input id="type6" type="checkbox">점유오류
+                    <input id="type5" type="checkbox">비점유오류
+                    <input id="type7" type="checkbox">교통량오류
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    
+    <div class="tab" style="margin-top:5px; height: 493px;">
+
+    </div>
+</div>
+
+
+<div class="tab6">
+    <div class="conditions">
+        <label>
+            교차로<br/>
+            <select>
+
+            </select>
+        </label>
+        <label></label>
+        <div></div>
+        <div>
+            <div class="Cbtnall">전체선택</div>
+        </div>
+        <div class="Cbtn1"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <fieldset class="tfdt_l">
+        <legend style="color:white">검지기 리스트</legend>
+        <div class="tab1"></div>
+    </fieldset>
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local">
+            ~<input type="datetime-local">
+        </label>
+        <label></label>
+        <div></div>
+        <div></div>
+        <div class="Cbtn2"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <fieldset class="tfdt">
+        <legend style="color:white">검지기 이력</legend>
+        <div class="tab2"></div>
+    </fieldset>
+</div>
+
+<div class="tab7">
+    <div class="conditions">
+        <label>
+            조회기간<br/>
+            <input type="datetime-local">
+            ~<input type="datetime-local">
+        </label>
+        <label>
+            교차로<br/>
+            <select>
+
+            </select>
+        </label>
+        <label>
+            통계유형<br/>
+            <select>
+                <option value="1">15분</option>
+                <option value="2">1시간</option>
+                <option value="3">1일</option>
+                <option value="4">한 달</option>
+            </select>
+        </label>
+        <div></div>
+        <div class="Cbtn"><i class="zmdi zmdi-search zmdi-hc-lg"></i>&nbsp;조회</div>
+    </div>
+    <div class="tab">
+
+    </div>
+    </div>
+</div>
+<!-- <div class="btns">
+    <div class="Cbtn">파일 저장</div>
+</div> -->

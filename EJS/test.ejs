@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <script type='module' src="/libraries/handsontable/dist/handsontable.full.min.js"></script>
+  <script type='module' src="/libraries/d3/d3.min.js"></script>
+  <script src='/javascripts/class.js'></script>
+  <script src='/javascripts/common.js' defer></script>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link rel='stylesheet' href='/stylesheets/pages/test.css' />
+    <script>
+      
+    </script>
+  </head>
+  
+  <body>
+    <h1><%= title %></h1>
+    <h1></h1>
+    <div id='modals'></div>
+    <div id='test' class="newNScrollBar"><div></div></div>
+    <div id='test' class="newScrollBar"><div></div></div>
+    <button onclick="makeModal('testModal', event)">testModal</button>
+    <button onclick="makeModal('testModal2', event)">testModal2</button>
+    <button onclick="makeModal('!0<p>테스트 하겠습니다<br>테스트 하겠습니다</p>', event)">alert</button>
+    <button id='loadTableBtn'>불러오기</button>
+    <div>
+      <input/>
+      <select>
+      </select>
+    </div>
+
+    <div id="examTable"></div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<nav class="sidenav" onclick="rightSideBar(this, event); rightSideBarButton()">
+  <ul class="main-buttons">
+    
+      <li onclick="rightSideBarButton()">
+        <i class="zmdi zmdi-map zmdi-hc-2x"></i>
+        교차로DB운영
+        <ul class="hidden">
+          <li id="gmonitorMenu">그룹 모니터링</li>
+          <li id="monitorMenu">교차로 모니터링</li>
+          <!-- <li>통신서버로그</li> -->
+          <% if(authority >= 2) { %>
+          <li id="grCtl">그룹온라인제어</li>
+          <li id="lcCtl">교차로특수제어</li>
+          <li id="dbUpDownMenu">DB업다운로드</li>
+          <% } %>
+        </ul>
+      </li>
+      <% if(authority >= 2) { %>
+      <li onclick="rightSideBarButton()">
+        <i class="zmdi zmdi-border-color zmdi-hc-2x"></i>
+        신호제어편집
+        <ul class="hidden">
+          <li id="saConfigMenu">그룹구성정보</li>
+          <!-- <li>그룹교차로</li>
+          <li>그룹결합/분리</li> -->
+          <li id="lcConfigMenu">교차로편집</li>
+          <li id="flowConfigMenu">이동류편집</li>
+          <li id="algorithmMenu">알고리즘변수</li>
+          <li id="signalEditMenu">신호제어편집</li>
+          <li id="firmwareMenu">펌웨어정보</li>
+          <!-- <li>긴급차량신호</li> -->
+        </ul>
+      </li>
+    <% } %>
+    <li onclick="rightSideBarButton()">
+      <i class="zmdi zmdi-calendar-note zmdi-hc-2x"></i>
+      조회
+       <ul class="hidden">
+        <li id="lookLogsA">운영 이력 조회</li>
+        <li id="eventMonitorA">이벤트 조회</li>
+        <!-- <li>그룹결합/분리 이력</li>
+        <li>교차로 교통정보</li>
+        <li>교차로 교통통계</li>
+        <li>검지기 현황</li>
+        <li>검지기 이력</li>
+        <li>검지기 통계</li>
+        <li>교통정보분석</li> -->
+      </ul>
+    </li>
+    <!-- <li onclick="rightSideBarButton()">
+      <i class="zmdi zmdi-calendar-note zmdi-hc-2x"></i>
+      이벤트조회
+      <ul class="hidden">
+        <li id="eventMonitor">이벤트 조회</li>
+        <li>교차로 이벤트</li>
+        <li>운영자 이벤트</li>
+        <li>검지기 이벤트</li>
+        <li>이벤트 통계</li>
+        <li>이벤트 설정</li>
+      </ul>
+    </li> -->
+    <% if(authority >= 2) { %>
+      <li onclick="rightSideBarButton()">
+        <i class="zmdi zmdi-info zmdi-hc-2x"></i>
+        시스템관리
+        <ul class="hidden">
+          <li id="systemMenu">환경설정</li>
+          <% if(authority > 2) { %>
+            <li id="userMenu">운영자관리</li>
+          <% } %>
+        </ul>
+      </li>
+      <li onclick="rightSideBarButton()">
+        <i class="zmdi zmdi-wrench zmdi-hc-2x"></i>
+        도구
+        <ul class="hidden">
+          <li id="dbCopyMenu">DB복사</li>
+          <li id="nodeLinkMenu">노드/링크 편집</li>
+          <!-- <li>시공도</li> -->
+          <li id="planMenu">보고서관리</li>
+          <li id="todMenu">TOD 생성/조회</li>
+        </ul>
+      </li>
+    <% } %>
+    <!-- <li onclick="rightSideBarButton()">
+      <i class="zmdi zmdi-star zmdi-hc-2x"></i>
+      즐겨찾기
+      <ul class="hidden">
+      </ul>
+    </li> -->
+  </ul>
+</nav>
